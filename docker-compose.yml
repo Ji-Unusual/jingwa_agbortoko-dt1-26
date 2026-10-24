@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  dt1_api:
+    build: .
+    command: python api.py
+    network_mode: "host"
+    env_file:
+      - .env
+
+  dt1_frontend:
+    build: .
+    command: streamlit run frontend.py --server.port 8501 --server.address 0.0.0.0
+    network_mode: "host"
+    env_file:
+      - .env
+    depends_on:
+      - dt1_api
