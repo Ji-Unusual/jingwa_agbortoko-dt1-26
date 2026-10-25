@@ -52,3 +52,14 @@ Below is the architecture diagram illustrating the components, how they interact
 ### 4. Scalability Boundaries
 * **Shortcoming:** Both containers share resources on a single GCP VM, creating a single point of failure under heavy workload spikes.
 * **Improvement:** Deploy on container orchestrators like Google Kubernetes Engine (GKE) or serverless container platforms like Google Cloud Run.
+---
+
+## ✏️ Individual Contributions & Code Modifications
+
+If comparing this repository to the starter code, the following key modifications and fixes were made:
+
+* **Container Communication Fix:** Updated `frontend/app.py` (Streamlit) to route backend requests to `http://api:5001` instead of `localhost:5001`, enabling container-to-container communication within Docker Compose's bridge network.
+* **Port Alignment:** Configured FastAPI (`api.py`) to serve on port `5001` and Streamlit (`app.py`) on port `8501`, aligning container port mappings in both Dockerfiles and `docker-compose.yml`.
+* **Containerization Setup:** Authored standard `Dockerfile` definitions for both API and Frontend services and composed them into a unified multi-container setup via `docker-compose.yml`.
+* **Deployment & Documentation:** Configured Docker Hub image publishing (`thejii/dt1-api` & `thejii/dt1-frontend`), established GitHub collaboration, created the end-to-end architecture diagram, and documented system shortcomings in the project README.
+
