@@ -2,7 +2,8 @@
 
 **GitHub Repository:** `Ji-Unusual/jingwa_agbortoko-dt1-26`  
 **GitHub Username:** `Ji-Unusual`  
-**Docker Hub Namespace:** `thejii`  
+**Docker Hub Namespace:** `thejii`
+**Live Application URL:** http://34.70.231.57:8501 
 
 ---
 
